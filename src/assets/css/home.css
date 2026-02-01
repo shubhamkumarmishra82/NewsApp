@@ -1,0 +1,67 @@
+
+/* Card full height */
+.active{
+    border-bottom: 2px solid white;
+}
+.cardh {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image fixed height */
+.cardh img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card body flexible */
+.cardh .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Title same height */
+.cardh .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 48px;
+}
+
+/* Date styling */
+.cardh .card-text:first-of-type {
+  font-size: 12px;
+  color: gray;
+}
+
+/* Description fixed space */
+.cardh .card-text:nth-of-type(2) {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/* Button always bottom */
+.cardh .btn {
+  margin-top: auto;
+}
+
+/* -------- MOBILE RESPONSIVE -------- */
+@media (max-width: 576px) {
+  .cardh img {
+    height: 180px;
+  }
+
+  .cardh .card-title {
+    font-size: 15px;
+  }
+
+  .cardh .card-text {
+    font-size: 13px;
+  }
+
+  .cardh .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

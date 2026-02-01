@@ -1,0 +1,15 @@
+.background{
+    background: linear-gradient(to right , green );
+   
+}
+.btn1{
+    background-color:rgb(255, 217, 0);
+    color: black;
+  
+    transition: All 1s 1s ease-in;
+}
+.btn1:hover{
+    transform: scale(1);
+    background-color: white;
+
+}
