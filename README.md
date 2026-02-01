@@ -2,15 +2,15 @@ A responsive news application built using HTML, CSS, JavaScript, and React that 
 
  <h1>Features</h1>
  
-Displays latest news headlines
-Category-based news filtering (e.g., Education,Crime,Economics, Sports, Technology)
-Responsive design for mobile and desktop
-Fast and dynamic UI using React
-Real-time data fetching using a news API
+Displays latest news headlines</br>
+Category-based news filtering (e.g., Education,Crime,Economics, Sports, Technology)</br>
+Responsive design for mobile and desktop</br>
+Fast and dynamic UI using React</br>
+Real-time data fetching using a news API</br>
 
-<h1>Tech Stack</h1>
+<h1>Tech Stack</h1></br>
 
-Frontend: HTML, CSS, JavaScript
-Framework: React
-API: News API (or any external news API)
+Frontend: HTML, CSS, JavaScript</br>
+Framework: React</br>
+API: News API (or any external news API)</br>
 
