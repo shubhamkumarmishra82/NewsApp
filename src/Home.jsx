@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import "../src/assets/css/home.css"
+import "../src/assets/css/home.css";
 
 export default function Home({ q, search, changelanguage }) {
   const [data, setData] = useState([]);
@@ -9,20 +9,20 @@ export default function Home({ q, search, changelanguage }) {
 
   const pageSize = 20;
 
-  const fetchData = async () => {
+  // Wrap fetchData in useCallback
+  const fetchData = useCallback(async () => {
     const response = await fetch(
       `https://newsapi.org/v2/everything?q=${search}&sortBy=publishedAt&language=${changelanguage}&page=${page}&pageSize=${pageSize}&apiKey=9b7368df3131427889c3982c7a4a8ec3`
     );
     const result = await response.json();
 
     if (result.articles) {
-      
-      setData(prev => page === 1 ? result.articles : [...prev, ...result.articles]);
+      setData(prev => (page === 1 ? result.articles : [...prev, ...result.articles]));
       setTotalResults(result.totalResults);
     }
-  };
+  }, [search, changelanguage, page]); // Dependencies
 
-
+  // Reset data when search changes
   useEffect(() => {
     if (search) {
       setData([]);
@@ -31,12 +31,12 @@ export default function Home({ q, search, changelanguage }) {
     }
   }, [search]);
 
-
+  // Fetch data whenever fetchData changes
   useEffect(() => {
     if (search) {
       fetchData();
     }
-  }, [page, changelanguage, search]);
+  }, [fetchData]);
 
   useEffect(() => {
     console.log("Search value:", search, "Language:", changelanguage);
